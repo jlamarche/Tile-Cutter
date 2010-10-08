@@ -1,7 +1,7 @@
 TTile Cutter
 v7
 r0
-t308252279.126634
+t308253093.977788
 cCheck dependencies
 cProcessInfoPlistFile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Info.plist" Tile_Cutter-Info.plist
 cCopyStringsFile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
@@ -41,8 +41,8 @@ t1286478575
 s45
 
 N/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib
-c000000004CAE667B0000000000035797
-t1286497915
+c000000004CAF59B00000000000035797
+t1286560176
 s219031
 
 N/Users/jeff/Desktop/Tile Cutter/NSImage-Tile.h
@@ -102,9 +102,9 @@ s816
 i<Cocoa/Cocoa.h>
 
 N/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m
-c000000004CAF56F60000000000000F94
-t1286559478
-s3988
+c000000004CAF5A230000000000001006
+t1286560291
+s4102
 i"Tile_CutterAppDelegate.h"
 i"TileCutterView.h"
 i"NSImage-Tile.h"
@@ -116,7 +116,7 @@ s153
 i<Cocoa/Cocoa.h>
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app
-t1286559479
+t1286560292
 s102
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Info.plist
@@ -124,7 +124,7 @@ t1286553163
 s898
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter
-t1286559479
+t1286560292
 s47288
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/PkgInfo
@@ -136,7 +136,7 @@ t1286553163
 s92
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/English.lproj/MainMenu.nib
-t1286553163
+t1286560242
 s42073
 
 N/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/image.png
@@ -165,8 +165,8 @@ t1286554345
 s39320
 
 N/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile_CutterAppDelegate.o
-t1286559479
-s49172
+t1286560292
+s49504
 
 N/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/main.o
 t1286554345
@@ -198,7 +198,7 @@ s1002
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies308252279#308252279#0(0"0(0#1#0"8743662560#0"0#
+lSLF07#2@18"Check dependencies308253093#308253093#0(0"0(0#1#0"8638087680#0"0#
 
 CCompileC "build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/NSImage-Tile.o" "/Users/jeff/Desktop/Tile Cutter/NSImage-Tile.m" normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s308251947.857839
@@ -253,8 +253,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF07#2@56"Compile /Users/jeff/Desktop/Tile Cutter/TileCutterView.m308247145#308247145#0(0"0(0#0#48"/Users/jeff/Desktop/Tile Cutter/TileCutterView.m8640058432#1562"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-generated-files.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-own-target-headers.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-all-target-headers.hmap" -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-project-headers.hmap" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" "-I/Users/jeff/Desktop/Tile Cutter/build/Debug/include" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources/x86_64" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/N0/N0IBDxIXGo03+hN8wc4guk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Tile_Cutter_Prefix-bmyetzdjneoginhhiupanauqiqbg/Tile_Cutter_Prefix.pch -c "/Users/jeff/Desktop/Tile Cutter/TileCutterView.m" -o "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/TileCutterView.o"0#
 
 CCompileC "build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile_CutterAppDelegate.o" "/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m" normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s308252279.011210
-e308252279.092856
+s308253092.064510
+e308253092.135376
 r1
 xCompileC
 xbuild/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile_CutterAppDelegate.o
@@ -263,7 +263,7 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF07#2@64"Compile /Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m308252279#308252279#0(0"0(0#0#56"/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m8737823616#1578"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-generated-files.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-own-target-headers.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-all-target-headers.hmap" -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-project-headers.hmap" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" "-I/Users/jeff/Desktop/Tile Cutter/build/Debug/include" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources/x86_64" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/N0/N0IBDxIXGo03+hN8wc4guk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Tile_Cutter_Prefix-bmyetzdjneoginhhiupanauqiqbg/Tile_Cutter_Prefix.pch -c "/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m" -o "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile_CutterAppDelegate.o"0#
+lSLF07#2@64"Compile /Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m308253092#308253092#0(0"0(0#0#56"/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m8738734016#1578"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-generated-files.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-own-target-headers.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-all-target-headers.hmap" -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-project-headers.hmap" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" "-I/Users/jeff/Desktop/Tile Cutter/build/Debug/include" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources/x86_64" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/N0/N0IBDxIXGo03+hN8wc4guk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Tile_Cutter_Prefix-bmyetzdjneoginhhiupanauqiqbg/Tile_Cutter_Prefix.pch -c "/Users/jeff/Desktop/Tile Cutter/Tile_CutterAppDelegate.m" -o "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile_CutterAppDelegate.o"0#
 
 CCompileC "build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/main.o" "/Users/jeff/Desktop/Tile Cutter/main.m" normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s308247145.337134
@@ -279,12 +279,12 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF07#2@46"Compile /Users/jeff/Desktop/Tile Cutter/main.m308247145#308247145#0(0"0(0#0#38"/Users/jeff/Desktop/Tile Cutter/main.m8638301184#1542"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-generated-files.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-own-target-headers.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-all-target-headers.hmap" -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-project-headers.hmap" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" "-I/Users/jeff/Desktop/Tile Cutter/build/Debug/include" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources/x86_64" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/N0/N0IBDxIXGo03+hN8wc4guk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Tile_Cutter_Prefix-bmyetzdjneoginhhiupanauqiqbg/Tile_Cutter_Prefix.pch -c "/Users/jeff/Desktop/Tile Cutter/main.m" -o "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/main.o"0#
 
 CCompileXIB "/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib"
-s308245963.376104
-e308245963.723107
+s308253041.141376
+e308253042.356002
 r1
 xCompileXIB
 x/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib
-lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib308245963#308245963#0(0"0(0#0#58"/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib8640805856#353"    cd "/Users/jeff/Desktop/Tile Cutter"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/English.lproj/MainMenu.nib" "/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib" --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib308253041#308253042#0(0"0(0#0#58"/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib8738452992#353"    cd "/Users/jeff/Desktop/Tile Cutter"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/English.lproj/MainMenu.nib" "/Users/jeff/Desktop/Tile Cutter/English.lproj/MainMenu.xib" --sdk /Developer/SDKs/MacOSX10.6.sdk0#
 
 CCopyStringsFile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
 s308245963.375431
@@ -305,14 +305,14 @@ ximage.png
 lSLF07#2@14"Copy image.png308245963#308245963#0(0"0(0#0#41"/Users/jeff/Desktop/Tile Cutter/image.png8640480448#314"    cd "/Users/jeff/Desktop/Tile Cutter"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/jeff/Desktop/Tile Cutter/image.png" "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Resources"0#
 
 CLd "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter" normal x86_64
-s308252279.092935
-e308252279.124489
+s308253092.135477
+e308253092.168730
 r1
 xLd
 x/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter
 xnormal
 xx86_64
-lSLF07#2@91"Link /Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter308252279#308252279#0(0"0(0#0#0"8741239712#535"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/clang -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/jeff/Desktop/Tile Cutter/build/Debug" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" -filelist "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile Cutter.LinkFileList" -mmacosx-version-min=10.6 -framework Cocoa -o "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter"0#
+lSLF07#2@91"Link /Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter308253092#308253092#0(0"0(0#0#0"8728433632#535"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/clang -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/jeff/Desktop/Tile Cutter/build/Debug" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" -filelist "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Objects-normal/x86_64/Tile Cutter.LinkFileList" -mmacosx-version-min=10.6 -framework Cocoa -o "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/MacOS/Tile Cutter"0#
 
 CProcessInfoPlistFile "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app/Contents/Info.plist" Tile_Cutter-Info.plist
 s308245963.371346
@@ -350,10 +350,10 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF07#2@33"Precompile Tile_Cutter_Prefix.pch308245963#308245964#0(0"0(0#0#54"/Users/jeff/Desktop/Tile Cutter/Tile_Cutter_Prefix.pch8647646720#1464"    cd "/Users/jeff/Desktop/Tile Cutter"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mfix-and-continue -fobjc-gc-only -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-generated-files.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-own-target-headers.hmap" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-all-target-headers.hmap" -iquote "/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/Tile Cutter-project-headers.hmap" "-F/Users/jeff/Desktop/Tile Cutter/build/Debug" "-I/Users/jeff/Desktop/Tile Cutter/build/Debug/include" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources/x86_64" "-I/Users/jeff/Desktop/Tile Cutter/build/Tile Cutter.build/Debug/Tile Cutter.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -c "/Users/jeff/Desktop/Tile Cutter/Tile_Cutter_Prefix.pch" -o /var/folders/N0/N0IBDxIXGo03+hN8wc4guk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Tile_Cutter_Prefix-hjikhgjezogvvpajmmfhhuchtshd/Tile_Cutter_Prefix.pch.pth0#
 
 CTouch "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app"
-s308252279.124574
-e308252279.126607
+s308253092.168835
+e308253092.170748
 r1
 xTouch
 x/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app
-lSLF07#2@65"Touch /Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app308252279#308252279#0(0"0(0#0#0"8740123072#125"    cd "/Users/jeff/Desktop/Tile Cutter"    /usr/bin/touch -c "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app"0#
+lSLF07#2@65"Touch /Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app308253092#308253092#0(0"0(0#0#0"8738736544#125"    cd "/Users/jeff/Desktop/Tile Cutter"    /usr/bin/touch -c "/Users/jeff/Desktop/Tile Cutter/build/Debug/Tile Cutter.app"0#
 

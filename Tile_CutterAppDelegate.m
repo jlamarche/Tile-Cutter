@@ -49,6 +49,7 @@
         {
 
             [columnBar setDoubleValue:(double)col];
+            [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", row, col]];
             NSAutoreleasePool *innerPool = [[NSAutoreleasePool alloc] init];
             NSImage *subImage = [image subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:col row:row];
             NSArray * representations = [subImage representations];
