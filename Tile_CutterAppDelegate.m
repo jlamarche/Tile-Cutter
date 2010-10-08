@@ -9,7 +9,7 @@
 #import "Tile_CutterAppDelegate.h"
 #import "TileCutterView.h"
 #import "NSImage-Tile.h"
-#import "TileCutterOperation.h"
+
 @interface Tile_CutterAppDelegate()
 {
     int tileHeight, tileWidth;
@@ -19,13 +19,11 @@
 
 @implementation Tile_CutterAppDelegate
 
-@synthesize window, tileCutterView, widthTextField, heightTextField, rowBar, columnBar, progressWindow, progressLabel, baseFilename, queue;
+@synthesize window, tileCutterView, widthTextField, heightTextField, rowBar, columnBar, progressWindow, progressLabel, baseFilename;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
-    self.queue = [[[NSOperationQueue alloc] init] autorelease];
-    [queue setMaxConcurrentOperationCount:1];
-    [queue setSuspended:NO];
+
 }
 - (void)saveThread
 {
@@ -33,39 +31,41 @@
     
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:tileCutterView.filename];
     
-//    [rowBar setIndeterminate:NO];
-//    [columnBar setIndeterminate:NO];
-//    [rowBar setMaxValue:(double)[image rowsWithTileHeight:[heightTextField floatValue]]];
-//    [rowBar setMinValue:0.];
-//    [rowBar setDoubleValue:0.];
-//    [columnBar setMinValue:0.];
-//    [columnBar setMaxValue:(double)[image columnsWithTileWidth:[widthTextField floatValue]]];
-//    [columnBar setDoubleValue:0.];
+    [rowBar setIndeterminate:NO];
+    [columnBar setIndeterminate:NO];
+    [rowBar setMaxValue:(double)[image rowsWithTileHeight:[heightTextField floatValue]]];
+    [rowBar setMinValue:0.];
+    [rowBar setDoubleValue:0.];
+    [columnBar setMinValue:0.];
+    [columnBar setMaxValue:(double)[image columnsWithTileWidth:[widthTextField floatValue]]];
+    [columnBar setDoubleValue:0.];
     
-    for (int row = 0; row < [image rowsWithTileHeight:tileHeight]; row++)
+    int rows = [image rowsWithTileHeight:tileHeight];
+    int cols = [image columnsWithTileWidth:tileWidth];
+    for (int row = 0; row < rows; row++)
     {
-        //[rowBar setDoubleValue:(double)row];
-        for (int col = 0; col < [image columnsWithTileWidth:tileWidth]; row++)
+        [rowBar setDoubleValue:(double)row];
+        for (int col = 0; col < cols; col++)
         {
 
-            //[columnBar setDoubleValue:(double)col];
-//            NSAutoreleasePool *innerPool = [[NSAutoreleasePool alloc] init];
+            [columnBar setDoubleValue:(double)col];
+            NSAutoreleasePool *innerPool = [[NSAutoreleasePool alloc] init];
             NSImage *subImage = [image subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:col row:row];
             NSArray * representations = [subImage representations];
 
             NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
                                                                           usingType:NSJPEGFileType properties:nil];
             
-            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, col, row];
+            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, row, col];
             [bitmapData writeToFile:outPath atomically:YES];
             
             
-//            [innerPool drain];
+            [innerPool drain];
         }
     }
-    
+    [image release];
      
-    //[NSApp endSheet:progressWindow];
+    [NSApp endSheet:progressWindow];
     [pool drain];
 }
 - (IBAction)saveButtonPressed:(id)sender
@@ -79,9 +79,6 @@
                  modalDelegate:self 
                 didEndSelector:@selector(didEndSaveSheet:returnCode:conextInfo:) 
                    contextInfo:nil];
-    
-    
-    //[NSApp endSheet:myCustomSheet];
 }
 -(void)didEndSaveSheet:(NSSavePanel *)savePanel
             returnCode:(int)returnCode conextInfo:(void *)contextInfo
@@ -91,24 +88,9 @@
         self.baseFilename = [[savePanel filename] stringByDeletingPathExtension];
         tileHeight = [heightTextField intValue];
         tileWidth = [widthTextField intValue];
-        NSImage *image = [[NSImage alloc] initWithContentsOfFile:tileCutterView.filename];
-        for (int row = 0; row < [image rowsWithTileHeight:tileHeight]; row++)
-        {
-            for (int col = 0; col < [image columnsWithTileWidth:tileWidth]; row++)
-            {
-                TileCutterOperation *op = [[TileCutterOperation alloc] init];
-                op.source = image;
-                op.tileHeight = tileHeight;
-                op.tileWidth = tileWidth;
-                op.row = row;
-                op.column = col;
-                op.delegate = self;
-                [queue addOperation:op];
-            }
-        }
         
-//        [self performSelector:@selector(delayPresentSheet) withObject:nil afterDelay:0.1];
-//        [self performSelectorInBackground:@selector(saveThread) withObject:nil];
+        [self performSelector:@selector(delayPresentSheet) withObject:nil afterDelay:0.1];
+        [self performSelectorInBackground:@selector(saveThread) withObject:nil];
     }
 }
 - (void)delayPresentSheet
@@ -128,21 +110,6 @@
     [sheet orderOut:self];
 
 }
-- (void)tileCutterOperation:(TileCutterOperation *)op didFinishSuccessfully:(NSImage *)tile
-{
-    NSLog(@"Operation %@ did succeed", op);
-    NSArray * representations = [tile representations];
-    
-    NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
-                                                                  usingType:NSJPEGFileType properties:nil];
-    
-    NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, op.row, op.column];
-    [bitmapData writeToFile:outPath atomically:YES];
-}
-- (void)tileCutterOperationDidFail:(TileCutterOperation *)op
-{
-    NSLog(@"Operation %@ failed!", op);
-}
 - (void)dealloc
 {
     [columnBar release], columnBar = nil;
@@ -150,7 +117,6 @@
     [progressWindow release], progressWindow = nil;
     [progressLabel release], progressLabel = nil;
     [baseFilename release], baseFilename = nil;
-    [queue release], queue = nil;
     [super dealloc];
 }
 @end

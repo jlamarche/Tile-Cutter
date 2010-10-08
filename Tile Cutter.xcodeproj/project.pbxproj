@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		1F15EAF9125E8ED200B32D97 /* NSImage-Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EA19125E826600B32D97 /* NSImage-Tile.m */; };
-		1F5BA89C125F5E000090EDC2 /* TileCutterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */; };
-		1F5BA8BE125F5EC70090EDC2 /* NSInvocation-MCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */; };
 		1F8CA17B125E531300588223 /* TileCutterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CA17A125E531300588223 /* TileCutterView.m */; };
 		1F8CA2B8125E6A8900588223 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CA2B7125E6A8900588223 /* image.png */; };
 		256AC3DA0F4B6AC300CF3369 /* Tile_CutterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */; };
@@ -26,10 +24,6 @@
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F15EA18125E826600B32D97 /* NSImage-Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-Tile.h"; sourceTree = "<group>"; };
 		1F15EA19125E826600B32D97 /* NSImage-Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage-Tile.m"; sourceTree = "<group>"; };
-		1F5BA89A125F5E000090EDC2 /* TileCutterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileCutterOperation.h; sourceTree = "<group>"; };
-		1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCutterOperation.m; sourceTree = "<group>"; };
-		1F5BA8BC125F5EC70090EDC2 /* NSInvocation-MCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation-MCUtilities.h"; sourceTree = "<group>"; };
-		1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation-MCUtilities.m"; sourceTree = "<group>"; };
 		1F8CA179125E531300588223 /* TileCutterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileCutterView.h; sourceTree = "<group>"; };
 		1F8CA17A125E531300588223 /* TileCutterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCutterView.m; sourceTree = "<group>"; };
 		1F8CA2B7125E6A8900588223 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
@@ -64,10 +58,6 @@
 				1F8CA17A125E531300588223 /* TileCutterView.m */,
 				1F15EA18125E826600B32D97 /* NSImage-Tile.h */,
 				1F15EA19125E826600B32D97 /* NSImage-Tile.m */,
-				1F5BA89A125F5E000090EDC2 /* TileCutterOperation.h */,
-				1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */,
-				1F5BA8BC125F5EC70090EDC2 /* NSInvocation-MCUtilities.h */,
-				1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -206,8 +196,6 @@
 				256AC3DA0F4B6AC300CF3369 /* Tile_CutterAppDelegate.m in Sources */,
 				1F8CA17B125E531300588223 /* TileCutterView.m in Sources */,
 				1F15EAF9125E8ED200B32D97 /* NSImage-Tile.m in Sources */,
-				1F5BA89C125F5E000090EDC2 /* TileCutterOperation.m in Sources */,
-				1F5BA8BE125F5EC70090EDC2 /* NSInvocation-MCUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

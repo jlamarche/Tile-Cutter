@@ -17,13 +17,11 @@
     if (row >= [self rowsWithTileHeight:tileHeight])
         return nil;
     
-    NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithCGImage:[self CGImageForProposedRect:NULL context:NULL hints:nil]];
+    NSBitmapImageRep *imageRep = [[[NSBitmapImageRep alloc] initWithCGImage:[self CGImageForProposedRect:NULL context:NULL hints:nil]] autorelease];
     int width = [imageRep pixelsWide];
     int height = [imageRep pixelsHigh];
-    int bpp = [imageRep bitsPerPixel] / 8;
-    
+    int bytesPerPixel = [imageRep bitsPerPixel] / 8;
 
-    
     int theRow = row * tileHeight;
     int theCol = column * tileWidth;
     
@@ -32,10 +30,11 @@
     
     int lastCol;
     int outputWidth;
-    if (theCol + tileWidth > width)
+    
+    if (theCol + tileWidth > width) // last column, not full size
     {
         lastCol = width;
-        outputWidth = width - theCol;
+        outputWidth = (width - theCol) - 1;
     }
     else
     {
@@ -47,7 +46,7 @@
     if (theRow + tileHeight > height)
     {
         lastRow = height;
-        outputHeight = height - theRow;
+        outputHeight = (height - theRow) -1;
     }
     else
     {
@@ -56,26 +55,10 @@
     }    
     
     NSImage *ret = [[NSImage alloc] initWithSize:NSMakeSize(outputWidth,outputHeight)];
-    
-    NSMutableData *retData = [NSMutableData dataWithLength:bpp * tileWidth * tileHeight];
-    
-    unsigned char *srcData = [imageRep bitmapData];
-    unsigned char *destData = [retData mutableBytes];
-    
-    
-    for (x = theCol; x < lastCol; x++)
-    {
-        for (y = theRow; y < lastRow; y++)
-        {
-            p1 = srcData + bpp * (y * width + x);
-            p2 = destData + bpp * ((y - theRow) * width + (x - theCol));
-            for (i = 0; i < bpp; i++)
-                p2[i] = p1[i];
-        }
-    }
-    NSBitmapImageRep *rep = [[[NSBitmapImageRep alloc] initWithBitmapDataPlanes:&destData 
-                                                                    pixelsWide:tileWidth 
-                                                                    pixelsHigh:tileHeight 
+
+    NSBitmapImageRep *retRep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL 
+                                                                    pixelsWide:outputWidth 
+                                                                    pixelsHigh:outputHeight 
                                                                  bitsPerSample:[imageRep bitsPerSample]
                                                                samplesPerPixel:[imageRep samplesPerPixel]
                                                                       hasAlpha:[imageRep hasAlpha]
@@ -83,18 +66,34 @@
                                                                 colorSpaceName:[imageRep colorSpaceName]
                                                                   bitmapFormat:[imageRep bitmapFormat]
                                                                    bytesPerRow:[imageRep bytesPerRow]
-                                                                  bitsPerPixel:[imageRep bitsPerPixel]] autorelease];
+                                                                  bitsPerPixel:[imageRep bitsPerPixel]];
+                                
+    unsigned char *srcData = [imageRep bitmapData];
+    unsigned char *destData = [retRep bitmapData];  
+    
+    
+    for (x = theCol; x < lastCol; x++)
+    {
+        for (y = theRow; y < lastRow; y++)
+        {
+            p1 = srcData + bytesPerPixel * (y * width + x);
+            p2 = destData + bytesPerPixel * ((y - theRow) * width + (x - theCol));
+            for (i = 0; i < bytesPerPixel; i++)
+                p2[i] = p1[i];
+        }
+    }
 
-    [ret addRepresentation:rep];
+    [ret addRepresentation:retRep];
+    [retRep release];
     return [ret autorelease];
     
 }
 -(NSUInteger)columnsWithTileWidth:(CGFloat)tileWidth
 {
-    return [self size].width / tileWidth;
+    return [self size].width / tileWidth + 1;
 }
 -(NSUInteger)rowsWithTileHeight:(CGFloat)tileHeight
 {
-    return [self size].height / tileHeight;
+    return [self size].height / tileHeight + 1;
 }
 @end
