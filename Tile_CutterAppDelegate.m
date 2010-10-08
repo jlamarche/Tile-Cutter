@@ -9,6 +9,7 @@
 #import "Tile_CutterAppDelegate.h"
 #import "TileCutterView.h"
 #import "NSImage-Tile.h"
+#import "NSUserDefaults-MCColor.h"
 
 @interface Tile_CutterAppDelegate()
 {
@@ -23,7 +24,19 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSColor *guideColor = [defaults colorForKey:@"guideColor"];
+    if (guideColor == nil)
+    {
+        [defaults setColor:[NSColor redColor] forKey:@"guideColor"];
+        [defaults setInteger:200 forKey:@"widthField"];
+        [defaults setBool:YES forKey:@"showGuides"];
+        [defaults setInteger:200 forKey:@"heightField"];
+    }
+    
+    
+    
+    
 }
 - (void)saveThread
 {
@@ -47,13 +60,13 @@
         [rowBar setDoubleValue:(double)row];
         for (int col = 0; col < cols; col++)
         {
-
+            
             [columnBar setDoubleValue:(double)col];
             [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", row, col]];
             NSAutoreleasePool *innerPool = [[NSAutoreleasePool alloc] init];
             NSImage *subImage = [image subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:col row:row];
             NSArray * representations = [subImage representations];
-
+            
             NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
                                                                           usingType:NSJPEGFileType properties:nil];
             
@@ -65,7 +78,7 @@
         }
     }
     [image release];
-     
+    
     [NSApp endSheet:progressWindow];
     [pool drain];
 }
@@ -97,6 +110,8 @@
 - (void)delayPresentSheet
 {
     [progressLabel setStringValue:@"Analyzing image for tile cutting…"];
+    [rowBar setIndeterminate:YES];
+    [columnBar setIndeterminate:YES];
     [rowBar startAnimation:self];
     [columnBar startAnimation:self];
     
@@ -109,7 +124,25 @@
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
     [sheet orderOut:self];
-
+    
+}
+- (IBAction)openSelected:(id)sender
+{
+    NSOpenPanel *op = [NSOpenPanel openPanel];
+    [op setAllowedFileTypes:[NSImage imageFileTypes]];
+    
+    [op beginSheetModalForWindow:window completionHandler:^(NSInteger returnCode){
+        if (returnCode == NSOKButton)
+        {
+            NSString *filename = [op filename];
+            tileCutterView.filename = filename;
+            NSImage *theImage = [[NSImage alloc] initWithContentsOfFile:filename];
+            tileCutterView.image = theImage;
+            [theImage release];
+            [tileCutterView setNeedsDisplay:YES];
+        }
+    }];
+    
 }
 - (void)dealloc
 {

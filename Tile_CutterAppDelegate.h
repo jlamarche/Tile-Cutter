@@ -23,4 +23,5 @@
 @property (retain) IBOutlet NSTextField *progressLabel;
 @property (retain) IBOutlet NSString *baseFilename;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)openSelected:(id)sender;
 @end
