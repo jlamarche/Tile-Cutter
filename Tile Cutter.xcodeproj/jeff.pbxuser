@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	1F15EA18125E826600B32D97 /* NSImage-Tile.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 604}}";
+			sepNavSelRange = "{314, 106}";
+			sepNavVisRange = "{0, 426}";
+		};
+	};
+	1F15EA19125E826600B32D97 /* NSImage-Tile.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 1111}}";
+			sepNavSelRange = "{3082, 0}";
+			sepNavVisRange = "{1104, 2202}";
+		};
+	};
+	1F5BA89A125F5E000090EDC2 /* TileCutterOperation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 604}}";
+			sepNavSelRange = "{236, 164}";
+			sepNavVisRange = "{0, 682}";
+		};
+	};
+	1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1311, 781}}";
+			sepNavSelRange = "{842, 0}";
+			sepNavVisRange = "{709, 824}";
+		};
+	};
+	1F5BA8BC125F5EC70090EDC2 /* NSInvocation-MCUtilities.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 581}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 440}";
+		};
+	};
+	1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 604}}";
+			sepNavSelRange = "{724, 87}";
+			sepNavVisRange = "{0, 1458}";
+		};
+	};
+	1F5BA8CD125F60330090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F8CA179125E531300588223 /* TileCutterView.h */;
+		name = "TileCutterView.h: 22";
+		rLen = 0;
+		rLoc = 597;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 0;
+	};
+	1F5BA8D6125F60B40090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F8CA17A125E531300588223 /* TileCutterView.m */;
+		name = "TileCutterView.m: 157";
+		rLen = 0;
+		rLoc = 4749;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 0;
+	};
+	1F5BA906125F64710090EDC2 /* Tile_CutterAppDelegate.m:144 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */;
+		functionName = "-tileCutterOperationDidFail:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 144;
+		location = "Tile Cutter";
+		modificationTime = 308243355.151504;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1F5BA908125F647E0090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F15EA18125E826600B32D97 /* NSImage-Tile.h */;
+		name = "NSImage-Tile.h: 14";
+		rLen = 106;
+		rLoc = 314;
+		rType = 0;
+		vrLen = 426;
+		vrLoc = 0;
+	};
+	1F5BA90B125F647E0090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* Tile_CutterAppDelegate.h */;
+		name = "Tile_CutterAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 201;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 0;
+	};
+	1F5BA91D125F65810090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F5BA89A125F5E000090EDC2 /* TileCutterOperation.h */;
+		name = "TileCutterOperation.h: 15";
+		rLen = 164;
+		rLoc = 236;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 0;
+	};
+	1F5BA94A125F69260090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F5BA8BC125F5EC70090EDC2 /* NSInvocation-MCUtilities.h */;
+		name = "NSInvocation-MCUtilities.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 440;
+		vrLoc = 0;
+	};
+	1F5BA97A125F6A0E0090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F15EA19125E826600B32D97 /* NSImage-Tile.m */;
+		name = "NSImage-Tile.m: 86";
+		rLen = 0;
+		rLoc = 3082;
+		rType = 0;
+		vrLen = 2202;
+		vrLoc = 1104;
+	};
+	1F5BA981125F6A2D0090EDC2 /* TileCutterOperation.m:28 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */;
+		functionName = "-informDelegateOfSuccess:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 28;
+		location = "Tile Cutter";
+		modificationTime = 308243368.137887;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1F5BA9A1125F6B2E0090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F5BA89B125F5E000090EDC2 /* TileCutterOperation.m */;
+		name = "TileCutterOperation.m: 30";
+		rLen = 0;
+		rLoc = 841;
+		rType = 0;
+		vrLen = 1608;
+		vrLoc = 341;
+	};
+	1F5BA9A6125F6B570090EDC2 /* NSInvocation-MCUtilities.m:34 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */;
+		functionName = "+invocationWithTarget:selector:retainArguments:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 34;
+		location = "Tile Cutter";
+		modificationTime = 308243370.29642;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1F5BA9C2125F6E110090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */;
+		name = "NSInvocation-MCUtilities.m: 37";
+		rLen = 0;
+		rLoc = 1211;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 641;
+	};
+	1F5BA9C3125F6E150090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */;
+		name = "Tile_CutterAppDelegate.m: 27";
+		rLen = 0;
+		rLoc = 706;
+		rType = 0;
+		vrLen = 2148;
+		vrLoc = 142;
+	};
+	1F5BAA53125F6F3C0090EDC2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F5BA8BD125F5EC70090EDC2 /* NSInvocation-MCUtilities.m */;
+		name = "NSInvocation-MCUtilities.m: 26";
+		rLen = 87;
+		rLoc = 724;
+		rType = 0;
+		vrLen = 1458;
+		vrLoc = 0;
+	};
+	1F80E5A2125E9CCC00673317 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 13";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 249;
+		vrLoc = 0;
+	};
+	1F8CA165125E526F00588223 /* Tile Cutter */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+			{
+				active = YES;
+				name = NSZombieEnabled;
+				value = YES;
+			},
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Tile Cutter";
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	1F8CA173125E528D00588223 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1F8CA174125E528D00588223 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1F8CA179125E531300588223 /* TileCutterView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 684}}";
+			sepNavSelRange = "{597, 0}";
+			sepNavVisRange = "{0, 673}";
+		};
+	};
+	1F8CA17A125E531300588223 /* TileCutterView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 1848}}";
+			sepNavSelRange = "{4749, 0}";
+			sepNavVisRange = "{0, 1583}";
+		};
+	};
+	256AC3D80F4B6AC300CF3369 /* Tile_CutterAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 604}}";
+			sepNavSelRange = "{201, 0}";
+			sepNavVisRange = "{0, 921}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 1716}}";
+			sepNavSelRange = "{706, 0}";
+			sepNavVisRange = "{142, 2148}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecturePreference = x86_64;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 1F8CA165125E526F00588223 /* Tile Cutter */;
+		activeTarget = 8D1107260486CEB800E47090 /* Tile Cutter */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Tile Cutter */,
+		);
+		breakpoints = (
+			1F5BA906125F64710090EDC2 /* Tile_CutterAppDelegate.m:144 */,
+			1F5BA981125F6A2D0090EDC2 /* TileCutterOperation.m:28 */,
+			1F5BA9A6125F6B570090EDC2 /* NSInvocation-MCUtilities.m:34 */,
+		);
+		codeSenseManager = 1F8CA174125E528D00588223 /* Code sense */;
+		executables = (
+			1F8CA165125E526F00588223 /* Tile Cutter */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA23EDF0692099D00951B8B" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					259,
+					20,
+					259,
+					259,
+					259,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					814,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					926,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 308239818;
+			PBXWorkspaceStateSaveDate = 308239818;
+		};
+		perUserProjectItems = {
+			1F5BA8CD125F60330090EDC2 /* PBXTextBookmark */ = 1F5BA8CD125F60330090EDC2 /* PBXTextBookmark */;
+			1F5BA8D6125F60B40090EDC2 /* PBXTextBookmark */ = 1F5BA8D6125F60B40090EDC2 /* PBXTextBookmark */;
+			1F5BA908125F647E0090EDC2 /* PBXTextBookmark */ = 1F5BA908125F647E0090EDC2 /* PBXTextBookmark */;
+			1F5BA90B125F647E0090EDC2 /* PBXTextBookmark */ = 1F5BA90B125F647E0090EDC2 /* PBXTextBookmark */;
+			1F5BA91D125F65810090EDC2 /* PBXTextBookmark */ = 1F5BA91D125F65810090EDC2 /* PBXTextBookmark */;
+			1F5BA94A125F69260090EDC2 /* PBXTextBookmark */ = 1F5BA94A125F69260090EDC2 /* PBXTextBookmark */;
+			1F5BA97A125F6A0E0090EDC2 /* PBXTextBookmark */ = 1F5BA97A125F6A0E0090EDC2 /* PBXTextBookmark */;
+			1F5BA9A1125F6B2E0090EDC2 /* PBXTextBookmark */ = 1F5BA9A1125F6B2E0090EDC2 /* PBXTextBookmark */;
+			1F5BA9C2125F6E110090EDC2 /* PBXTextBookmark */ = 1F5BA9C2125F6E110090EDC2 /* PBXTextBookmark */;
+			1F5BA9C3125F6E150090EDC2 /* PBXTextBookmark */ = 1F5BA9C3125F6E150090EDC2 /* PBXTextBookmark */;
+			1F5BAA53125F6F3C0090EDC2 /* PBXTextBookmark */ = 1F5BAA53125F6F3C0090EDC2 /* PBXTextBookmark */;
+			1F80E5A2125E9CCC00673317 /* PBXTextBookmark */ = 1F80E5A2125E9CCC00673317 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 1F8CA173125E528D00588223 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1311, 217}}";
+			sepNavSelRange = "{188, 0}";
+			sepNavVisRange = "{0, 249}";
+		};
+	};
+	8D1107260486CEB800E47090 /* Tile Cutter */ = {
+		activeExec = 0;
+		executables = (
+			1F8CA165125E526F00588223 /* Tile Cutter */,
+		);
+	};
+}
