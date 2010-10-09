@@ -322,7 +322,7 @@
 							<real>185</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>350 175 1372 869 0 0 1920 1058 </string>
+						<string>152 164 1372 869 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -338,7 +338,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1F8CA1B5125E590E00588223</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Tile_CutterAppDelegate.m</string>
+								<string>NSImage-Tile.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -346,22 +346,22 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1F8CA1B6125E590E00588223</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Tile_CutterAppDelegate.m</string>
+										<string>NSImage-Tile.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1F5BAD35125FA6930090EDC2</string>
+										<string>1F373CB3125FD400007ED8A4</string>
 										<key>history</key>
 										<array>
 											<string>1F80E5A2125E9CCC00673317</string>
 											<string>1F5BA908125F647E0090EDC2</string>
-											<string>1F5BAC41125F8E780090EDC2</string>
 											<string>1F5BAC84125F9D920090EDC2</string>
 											<string>1F5BAC91125F9E3C0090EDC2</string>
 											<string>1F5BACA2125F9E920090EDC2</string>
 											<string>1F5BACB8125FA0BC0090EDC2</string>
 											<string>1F5BAD02125FA4B00090EDC2</string>
-											<string>1F5BAD33125FA6870090EDC2</string>
+											<string>1F373C3C125FCC0F007ED8A4</string>
+											<string>1F373CA7125FD3E0007ED8A4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -375,18 +375,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1165, 611}}</string>
+								<string>{{0, 0}, {1165, 588}}</string>
 								<key>RubberWindowFrame</key>
-								<string>350 175 1372 869 0 0 1920 1058 </string>
+								<string>152 164 1372 869 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>611pt</string>
+							<string>588pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>212pt</string>
+							<string>235pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -400,7 +400,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1165, 185}}</string>
+										<string>{{10, 27}, {1165, 208}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -454,9 +454,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1165, 185}}</string>
+										<string>{{10, 27}, {1165, 208}}</string>
 										<key>RubberWindowFrame</key>
-										<string>350 175 1372 869 0 0 1920 1058 </string>
+										<string>152 164 1372 869 0 0 1920 1058 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -484,11 +484,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1F5BACDC125FA2700090EDC2</string>
+				<string>1F373C73125FCEEF007ED8A4</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>1F5BACDD125FA2700090EDC2</string>
+				<string>1F373C74125FCEEF007ED8A4</string>
 				<string>1F8CA1B5125E590E00588223</string>
-				<string>1F5BACDE125FA2700090EDC2</string>
+				<string>1F373C75125FCEEF007ED8A4</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -637,13 +637,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1F5BACDF125FA2700090EDC2</string>
+				<string>1F373C76125FCEEF007ED8A4</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>1F5BACE0125FA2700090EDC2</string>
-				<string>1F5BACE1125FA2700090EDC2</string>
-				<string>1F5BACE2125FA2700090EDC2</string>
-				<string>1F5BACE3125FA2700090EDC2</string>
+				<string>1F373C77125FCEEF007ED8A4</string>
+				<string>1F373C78125FCEEF007ED8A4</string>
+				<string>1F373C79125FCEEF007ED8A4</string>
+				<string>1F373C7A125FCEEF007ED8A4</string>
 				<string>1F8CA1B5125E590E00588223</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -661,7 +661,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>308258451.63253897</real>
+	<real>308270080.20033997</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -678,12 +678,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1F5BACE5125FA2700090EDC2</string>
-		<string>1F5BACE6125FA2700090EDC2</string>
-		<string>/Users/jeff/Desktop/Tile Cutter/Tile Cutter.xcodeproj</string>
+		<string>1F373C7C125FCEEF007ED8A4</string>
+		<string>1F373C7D125FCEEF007ED8A4</string>
+		<string>/Users/jeff/dev/Tile Cutter/Tile Cutter.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>350 175 1372 869 0 0 1920 1058 </string>
+	<string>152 164 1372 869 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

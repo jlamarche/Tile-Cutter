@@ -34,25 +34,32 @@
     if (theCol + tileWidth > width) // last column, not full size
     {
         lastCol = width;
-        outputWidth = (width - theCol) - 1;
+        outputWidth = (width - theCol);
     }
     else
     {
         lastCol = theCol + tileWidth;
         outputWidth = tileWidth;
     }
-    
+//    BOOL print = NO;
+//    NSLog(@"theRow: %d", theRow);
+//    NSLog(@"tileHeight: %f", tileHeight);
+//    NSLog(@"Height: %d", height);
     int lastRow, outputHeight;
     if (theRow + tileHeight > height)
     {
         lastRow = height;
-        outputHeight = (height - theRow) -1;
+        outputHeight = (height - theRow);
+//        print = YES;
     }
     else
     {
         lastRow = theRow + tileHeight;
         outputHeight = tileHeight;
     }    
+//    NSLog(@"width: %d\nheight: %d", width, height);
+//    NSLog(@"outputHeight: %d", outputHeight);
+//    NSLog(@"outputWidth: %d", outputWidth);
     
     NSImage *ret = [[NSImage alloc] initWithSize:NSMakeSize(outputWidth,outputHeight)];
 
