@@ -1,0 +1,1 @@
+Tile Cutter is an open source under the non-viral MIT license. Tile Cutter will take a large image and split it up into smaller tiles. I created this for use in a CATiledLayer-backed view for an iPad application, but it could be used for a number of other purposes.
