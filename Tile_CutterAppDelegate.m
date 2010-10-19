@@ -22,6 +22,19 @@
 
 @synthesize window, tileCutterView, widthTextField, heightTextField, rowBar, columnBar, progressWindow, progressLabel, baseFilename;
 
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
+{
+    tileCutterView.filename = filename;
+    NSImage *theImage = [[NSImage alloc] initWithContentsOfFile:filename];
+    if (theImage == nil)
+        return NO;
+    
+    tileCutterView.image = theImage;
+    [theImage release];
+    [tileCutterView setNeedsDisplay:YES];
+    return YES;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -104,7 +117,6 @@
         tileWidth = [widthTextField intValue];
         
         [self performSelector:@selector(delayPresentSheet) withObject:nil afterDelay:0.1];
-        [self performSelectorInBackground:@selector(saveThread) withObject:nil];
     }
 }
 - (void)delayPresentSheet
@@ -120,6 +132,8 @@
         modalDelegate: self
        didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
           contextInfo: nil];
+    
+    [self performSelectorInBackground:@selector(saveThread) withObject:nil];
 }
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
@@ -135,11 +149,7 @@
         if (returnCode == NSOKButton)
         {
             NSString *filename = [op filename];
-            tileCutterView.filename = filename;
-            NSImage *theImage = [[NSImage alloc] initWithContentsOfFile:filename];
-            tileCutterView.image = theImage;
-            [theImage release];
-            [tileCutterView setNeedsDisplay:YES];
+            [self application:NSApp openFile:filename];
         }
     }];
     
