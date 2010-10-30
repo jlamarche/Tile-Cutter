@@ -39,7 +39,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Tile Cutter.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.naked.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.naked.TileCutter</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

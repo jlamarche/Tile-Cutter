@@ -6,21 +6,26 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
+#include <dispatch/dispatch.h>
 #import "Tile_CutterAppDelegate.h"
 #import "TileCutterView.h"
 #import "NSImage-Tile.h"
 #import "NSUserDefaults-MCColor.h"
+#import "TileOperation.h"
 
 @interface Tile_CutterAppDelegate()
 {
     int tileHeight, tileWidth;
+    int tileRowCount, tileColCount;
+    int progressCol, progressRow;
 }
+- (void)delayAlert:(NSString *)message;
 @end
 
 
 @implementation Tile_CutterAppDelegate
 
-@synthesize window, tileCutterView, widthTextField, heightTextField, rowBar, columnBar, progressWindow, progressLabel, baseFilename;
+@synthesize window, tileCutterView, widthTextField, heightTextField, rowBar, columnBar, progressWindow, progressLabel, baseFilename, queue;
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
 {
@@ -47,9 +52,7 @@
         [defaults setInteger:200 forKey:@"heightField"];
     }
     
-    
-    
-    
+    self.queue = [[[NSOperationQueue alloc] init] autorelease];
 }
 - (void)saveThread
 {
@@ -66,33 +69,29 @@
     [columnBar setMaxValue:(double)[image columnsWithTileWidth:[widthTextField floatValue]]];
     [columnBar setDoubleValue:0.];
     
-    int rows = [image rowsWithTileHeight:tileHeight];
-    int cols = [image columnsWithTileWidth:tileWidth];
-    for (int row = 0; row < rows; row++)
+    progressCol = 0;
+    progressRow = 0;
+    
+    tileRowCount = [image rowsWithTileHeight:tileHeight];
+    tileColCount = [image columnsWithTileWidth:tileWidth];
+    
+    for (int row = 0; row < tileRowCount; row++)
     {
-        [rowBar setDoubleValue:(double)row];
-        for (int col = 0; col < cols; col++)
+        for (int col = 0; col < tileColCount; col++)
         {
-            
-            [columnBar setDoubleValue:(double)col];
-            [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", row, col]];
-            NSAutoreleasePool *innerPool = [[NSAutoreleasePool alloc] init];
-            NSImage *subImage = [image subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:col row:row];
-            NSArray * representations = [subImage representations];
-            
-            NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
-                                                                          usingType:NSJPEGFileType properties:nil];
-            
-            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, row, col];
-            [bitmapData writeToFile:outPath atomically:YES];
-            
-            
-            [innerPool drain];
+            TileOperation *op = [[TileOperation alloc] init];
+            op.column = col;
+            op.row = row;
+            op.tileWidth = tileWidth;
+            op.tileHeight = tileHeight;
+            op.image = image;
+            op.baseFilename = baseFilename;
+            op.delegate = self;
+            [queue addOperation:op];
+            [op release];
         }
     }
     [image release];
-    
-    [NSApp endSheet:progressWindow];
     [pool drain];
 }
 - (IBAction)saveButtonPressed:(id)sender
@@ -161,6 +160,39 @@
     [progressWindow release], progressWindow = nil;
     [progressLabel release], progressLabel = nil;
     [baseFilename release], baseFilename = nil;
+    [queue release], queue = nil;
     [super dealloc];
+}
+#pragma mark -
+- (void)operationDidFinishSuccessfully:(TileOperation *)op
+{
+    progressCol++;
+    if (progressCol >= tileColCount)
+    {
+        progressCol = 0;
+        progressRow++;
+    }
+    if (progressRow >= tileRowCount)
+        [NSApp endSheet:progressWindow];
+    
+    [rowBar setDoubleValue:(double)progressRow];
+    [columnBar setDoubleValue:(double)progressCol];
+    [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", progressRow, progressCol]];
+    
+
+}
+- (void)delayAlert:(NSString *)message
+{
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    [alert addButtonWithTitle:@"Crud"];
+    [alert setMessageText:@"There was an error tiling this image."];
+    [alert setInformativeText:message];
+    [alert setAlertStyle:NSCriticalAlertStyle];
+    [alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+- (void)operation:(TileOperation *)op didFailWithMessage:(NSString *)message
+{
+    [NSApp endSheet:progressWindow];
+    [self performSelector:@selector(delayAlert:) withObject:nil afterDelay:0.5];
 }
 @end

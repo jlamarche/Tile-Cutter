@@ -13,6 +13,8 @@
 		1F5BACFD125FA41E0090EDC2 /* NSUserDefaults-MCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5BACFC125FA41E0090EDC2 /* NSUserDefaults-MCColor.m */; };
 		1F8CA17B125E531300588223 /* TileCutterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CA17A125E531300588223 /* TileCutterView.m */; };
 		1F8CA2B8125E6A8900588223 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CA2B7125E6A8900588223 /* image.png */; };
+		1FFB9941127C847100BE5A73 /* TileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB9940127C847100BE5A73 /* TileOperation.m */; };
+		1FFB9979127C874900BE5A73 /* NSInvocation-MCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB9978127C874900BE5A73 /* NSInvocation-MCUtilities.m */; };
 		256AC3DA0F4B6AC300CF3369 /* Tile_CutterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -32,6 +34,10 @@
 		1F8CA179125E531300588223 /* TileCutterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileCutterView.h; sourceTree = "<group>"; };
 		1F8CA17A125E531300588223 /* TileCutterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCutterView.m; sourceTree = "<group>"; };
 		1F8CA2B7125E6A8900588223 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		1FFB993F127C847100BE5A73 /* TileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileOperation.h; sourceTree = "<group>"; };
+		1FFB9940127C847100BE5A73 /* TileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileOperation.m; sourceTree = "<group>"; };
+		1FFB9977127C874900BE5A73 /* NSInvocation-MCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation-MCUtilities.h"; sourceTree = "<group>"; };
+		1FFB9978127C874900BE5A73 /* NSInvocation-MCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation-MCUtilities.m"; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* Tile_CutterAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile_CutterAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile_CutterAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Tile_Cutter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile_Cutter_Prefix.pch; sourceTree = "<group>"; };
@@ -57,6 +63,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1FFB9977127C874900BE5A73 /* NSInvocation-MCUtilities.h */,
+				1FFB9978127C874900BE5A73 /* NSInvocation-MCUtilities.m */,
 				256AC3D80F4B6AC300CF3369 /* Tile_CutterAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* Tile_CutterAppDelegate.m */,
 				1F8CA179125E531300588223 /* TileCutterView.h */,
@@ -65,6 +73,8 @@
 				1F15EA19125E826600B32D97 /* NSImage-Tile.m */,
 				1F5BACFB125FA41E0090EDC2 /* NSUserDefaults-MCColor.h */,
 				1F5BACFC125FA41E0090EDC2 /* NSUserDefaults-MCColor.m */,
+				1FFB993F127C847100BE5A73 /* TileOperation.h */,
+				1FFB9940127C847100BE5A73 /* TileOperation.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -206,6 +216,8 @@
 				1F8CA17B125E531300588223 /* TileCutterView.m in Sources */,
 				1F15EAF9125E8ED200B32D97 /* NSImage-Tile.m in Sources */,
 				1F5BACFD125FA41E0090EDC2 /* NSUserDefaults-MCColor.m in Sources */,
+				1FFB9941127C847100BE5A73 /* TileOperation.m in Sources */,
+				1FFB9979127C874900BE5A73 /* NSInvocation-MCUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +309,7 @@
 				);
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
