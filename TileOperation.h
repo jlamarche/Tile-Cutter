@@ -12,6 +12,7 @@
 
 @protocol TileOperationDelegate
 @optional
+- (void)operationDidFinishTile:(TileOperation *)op;
 - (void)operationDidFinishSuccessfully:(TileOperation *)op;
 - (void)operation:(TileOperation *)op didFailWithMessage:(NSString *)message;
 @end
@@ -22,8 +23,9 @@
 
 }
 @property (assign) NSObject <TileOperationDelegate> *delegate;
-@property (retain) NSImage *image;
-@property NSUInteger column;
+//@property (retain) NSImage *image;
+@property (retain) NSBitmapImageRep *imageRep;
+//@property NSUInteger column;
 @property NSUInteger row;
 @property (retain) NSString *baseFilename;
 @property NSUInteger tileHeight;

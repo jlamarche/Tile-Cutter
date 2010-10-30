@@ -56,9 +56,11 @@
 }
 - (void)saveThread
 {
+    NSLog(@"Save thread started");
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; 
     
-    NSImage *image = [[NSImage alloc] initWithContentsOfFile:tileCutterView.filename];
+    NSImage *image = [[[NSImage alloc] initWithContentsOfFile:tileCutterView.filename] autorelease];
+    NSBitmapImageRep *imageRep = [[[NSBitmapImageRep alloc] initWithCGImage:[image CGImageForProposedRect:NULL context:NULL hints:nil]] autorelease];
     
     [rowBar setIndeterminate:NO];
     [columnBar setIndeterminate:NO];
@@ -77,21 +79,22 @@
     
     for (int row = 0; row < tileRowCount; row++)
     {
-        for (int col = 0; col < tileColCount; col++)
-        {
+//        for (int col = 0; col < tileColCount; col++)
+//        {
             TileOperation *op = [[TileOperation alloc] init];
-            op.column = col;
+            //op.column = col;
             op.row = row;
             op.tileWidth = tileWidth;
             op.tileHeight = tileHeight;
-            op.image = image;
+            op.imageRep = imageRep;
             op.baseFilename = baseFilename;
             op.delegate = self;
             [queue addOperation:op];
             [op release];
-        }
+//        }
     }
-    [image release];
+//    [queue setSuspended:NO];
+//    [image release];
     [pool drain];
 }
 - (IBAction)saveButtonPressed:(id)sender
@@ -132,6 +135,7 @@
        didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
           contextInfo: nil];
     
+    //[queue setSuspended:YES];
     [self performSelectorInBackground:@selector(saveThread) withObject:nil];
 }
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
@@ -164,7 +168,7 @@
     [super dealloc];
 }
 #pragma mark -
-- (void)operationDidFinishSuccessfully:(TileOperation *)op
+- (void)operationDidFinishTile:(TileOperation *)op
 {
     progressCol++;
     if (progressCol >= tileColCount)

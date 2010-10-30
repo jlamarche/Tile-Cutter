@@ -9,9 +9,10 @@
 #import "TileOperation.h"
 #import "NSImage-Tile.h"
 #import "NSInvocation-MCUtilities.h"
+#import "NSBitmapImageRep-Tile.h"
 
 @implementation TileOperation
-@synthesize delegate, image, column, row, baseFilename, tileHeight, tileWidth;
+@synthesize delegate, imageRep, row, baseFilename, tileHeight, tileWidth;
 #pragma mark -
 - (void)informDelegateOfError:(NSString *)message
 {
@@ -29,35 +30,45 @@
     @try 
     {
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-        NSImage *subImage = [image subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:column row:row];
         
-        if (subImage == nil)
+        for (int column = 0; column < [imageRep pixelsWide] / tileWidth + 1; column++)
         {
-            [self informDelegateOfError:NSLocalizedString(@"Error creating tile", @"")];
-            goto finish;
-        }
-        
-        NSArray * representations = [subImage representations];
-        
-        if ([self isCancelled])
-            goto finish;
-        
-        NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
-                                                                      usingType:NSJPEGFileType properties:nil];
-        
-        if (bitmapData == nil)
-        {
-            [self informDelegateOfError:NSLocalizedString(@"Error retrieving bitmap data from result", @"")];
-            goto finish;
+            NSImage *subImage = [imageRep subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:column row:row];
+            
+            if (subImage == nil)
+            {
+                [self informDelegateOfError:NSLocalizedString(@"Error creating tile", @"")];
+                goto finish;
+            }
+            
+            NSArray * representations = [subImage representations];
+            
+            if ([self isCancelled])
+                goto finish;
+            
+            NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
+                                                                          usingType:NSJPEGFileType properties:nil];
+            
+            if (bitmapData == nil)
+            {
+                [self informDelegateOfError:NSLocalizedString(@"Error retrieving bitmap data from result", @"")];
+                goto finish;
+            }
+            
+            
+            if ([self isCancelled])
+                goto finish;
+            
+            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, row, column];
+            [bitmapData writeToFile:outPath atomically:YES];
+            
+            if ([delegate respondsToSelector:@selector(operationDidFinishTile:)])
+                [delegate performSelectorOnMainThread:@selector(operationDidFinishTile:) 
+                                           withObject:self 
+                                        waitUntilDone:NO];
+            
         }
 
-        
-        if ([self isCancelled])
-            goto finish;
-        
-        NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, row, column];
-        [bitmapData writeToFile:outPath atomically:YES];
-        
         if ([delegate respondsToSelector:@selector(operationDidFinishSuccessfully:)])
             [delegate performSelectorOnMainThread:@selector(operationDidFinishSuccessfully:) 
                                        withObject:self 
@@ -74,7 +85,7 @@
 - (void)dealloc
 {
     delegate = nil;
-    [image release], image = nil;
+    [imageRep release], imageRep = nil;
     [baseFilename release], baseFilename = nil;
     
     [super dealloc];
