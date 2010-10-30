@@ -29,6 +29,7 @@
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
 {
+
     tileCutterView.filename = filename;
     NSImage *theImage = [[NSImage alloc] initWithContentsOfFile:filename];
     if (theImage == nil)
@@ -60,7 +61,6 @@
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; 
     
     NSImage *image = [[[NSImage alloc] initWithContentsOfFile:tileCutterView.filename] autorelease];
-    NSBitmapImageRep *imageRep = [[[NSBitmapImageRep alloc] initWithCGImage:[image CGImageForProposedRect:NULL context:NULL hints:nil]] autorelease];
     
     [rowBar setIndeterminate:NO];
     [columnBar setIndeterminate:NO];
@@ -79,22 +79,19 @@
     
     for (int row = 0; row < tileRowCount; row++)
     {
-//        for (int col = 0; col < tileColCount; col++)
-//        {
-            TileOperation *op = [[TileOperation alloc] init];
-            //op.column = col;
-            op.row = row;
-            op.tileWidth = tileWidth;
-            op.tileHeight = tileHeight;
-            op.imageRep = imageRep;
-            op.baseFilename = baseFilename;
-            op.delegate = self;
-            [queue addOperation:op];
-            [op release];
-//        }
+        // Each row operation gets its own ImageRep to avoid contention
+        NSBitmapImageRep *imageRep = [[[NSBitmapImageRep alloc] initWithCGImage:[image CGImageForProposedRect:NULL context:NULL hints:nil]] autorelease];
+        TileOperation *op = [[TileOperation alloc] init];
+        op.row = row;
+        op.tileWidth = tileWidth;
+        op.tileHeight = tileHeight;
+        op.imageRep = imageRep;
+        op.baseFilename = baseFilename;
+        op.delegate = self;
+        [queue addOperation:op];
+        [op release];
     }
-//    [queue setSuspended:NO];
-//    [image release];
+    
     [pool drain];
 }
 - (IBAction)saveButtonPressed:(id)sender
@@ -183,7 +180,7 @@
     [columnBar setDoubleValue:(double)progressCol];
     [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", progressRow, progressCol]];
     
-
+    
 }
 - (void)delayAlert:(NSString *)message
 {

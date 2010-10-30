@@ -25,9 +25,7 @@
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender 
 {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-    
-    sourceDragMask = [sender draggingSourceOperationMask];
+    NSDragOperation sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] || [[pboard types] containsObject:NSTIFFPboardType] || [[pboard types] containsObject:NSPDFPboardType] ) 
@@ -46,7 +44,7 @@
     NSColor *pattern = [NSColor colorWithPatternImage:[NSImage imageNamed:@"image.png"]];
     [pattern setFill];
     NSRectFill(NSUnionRect([self bounds], dirtyRect));
-
+    
     if (image == nil)
         return;
     
@@ -57,7 +55,7 @@
     float srcAspectRatio = image.size.width / image.size.height;
     float dstAspectRatio = destRect.size.width / destRect.size.height;
     
-
+    
     if (srcAspectRatio > dstAspectRatio)
         destRect.size.height = (1.f / srcAspectRatio) * destRect.size.width;
     else
@@ -73,7 +71,7 @@
         float delta = [self bounds].size.height - destRect.size.height;
         destRect.origin.y += delta/2.f;               
     }
-
+    
     [image drawInRect:destRect fromRect:sourceRect operation:NSCompositeSourceOver fraction:1.0];
     
     if (![guideCheckbox intValue])
@@ -126,24 +124,19 @@
 }
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender 
 {
-    NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
+    NSPasteboard *pboard = [sender draggingPasteboard];
     
-    sourceDragMask = [sender draggingSourceOperationMask];
-    pboard = [sender draggingPasteboard];
-    
-    if ( [[pboard types] containsObject:NSFilenamesPboardType] ) 
+    if ([[pboard types] containsObject:NSFilenamesPboardType]) 
     {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
         
         if ([files count] == 0)
             return NO;
         
-        // Only handle first file, ignore rest
+        
         self.filename = [files objectAtIndex:0];
-        NSImage *theImage = [[NSImage alloc] initWithContentsOfFile:filename];
+        NSImage *theImage = [[[NSImage alloc] initWithContentsOfFile:filename] autorelease];
         [self setImage:theImage];
-        [theImage release];
         [self setNeedsDisplay:YES];
     }
     return YES;
@@ -158,7 +151,7 @@
     [tileHeightField release], tileHeightField = nil;
     [guideColorWell release], guideColorWell = nil;
     [saveButton release], saveButton = nil;
-        
+    
     [image release], image = nil;
     [filename release], filename = nil;
     [super dealloc];
