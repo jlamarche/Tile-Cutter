@@ -12,7 +12,7 @@
 #import "NSBitmapImageRep-Tile.h"
 
 @implementation TileOperation
-@synthesize delegate, imageRep, row, baseFilename, tileHeight, tileWidth;
+@synthesize delegate, imageRep, row, baseFilename, tileHeight, tileWidth, outputFormat;
 #pragma mark -
 - (void)informDelegateOfError:(NSString *)message
 {
@@ -31,6 +31,42 @@
     {
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         
+        NSString *extension = nil;
+        NSBitmapImageFileType fileType;
+
+        switch (outputFormat)
+        {
+            case TileCutterOutputPrefsJPEG:
+                extension = @"jpg";
+                fileType = NSJPEGFileType;
+                break;
+            case TileCutterOutputPrefsGIF:
+                extension = @"gif";
+                fileType = NSGIFFileType;
+                break;
+            case TileCutterOutputPrefsTIFF:
+                extension = @"tiff";
+                fileType = NSTIFFFileType;
+                break;
+            case TileCutterOutputPrefsBMP:
+                extension = @"bmp";
+                fileType = NSBMPFileType;
+                break;
+            case TileCutterOutputPrefsPNG:
+                extension = @"png";
+                fileType = NSPNGFileType;
+                break;
+            case TileCutterOutputPrefsJPEG2000:
+                extension = @"jpx";
+                fileType = NSJPEG2000FileType;
+                break;
+            default:
+                NSLog(@"Bad preference detected, assuming JPEG");
+                extension = @"jpg";
+                fileType = NSJPEGFileType;
+                break;
+        }
+        
         for (int column = 0; column < [imageRep pixelsWide] / tileWidth + 1; column++)
         {
             NSImage *subImage = [imageRep subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:column row:row];
@@ -47,7 +83,7 @@
                 goto finish;
             
             NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations 
-                                                                          usingType:NSJPEGFileType properties:nil];
+                                                                          usingType:fileType properties:nil];
             
             if (bitmapData == nil)
             {
@@ -59,7 +95,7 @@
             if ([self isCancelled])
                 goto finish;
             
-            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.jpg", baseFilename, row, column];
+            NSString *outPath = [NSString stringWithFormat:@"%@_%d_%d.%@", baseFilename, row, column, extension];
             [bitmapData writeToFile:outPath atomically:YES];
             
             if ([delegate respondsToSelector:@selector(operationDidFinishTile:)])
@@ -68,7 +104,7 @@
                                         waitUntilDone:NO];
             
         }
-
+        
         if ([delegate respondsToSelector:@selector(operationDidFinishSuccessfully:)])
             [delegate performSelectorOnMainThread:@selector(operationDidFinishSuccessfully:) 
                                        withObject:self 

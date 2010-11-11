@@ -13,6 +13,8 @@
 #import "NSUserDefaults-MCColor.h"
 #import "TileOperation.h"
 
+
+
 @interface Tile_CutterAppDelegate()
 {
     int tileHeight, tileWidth;
@@ -77,6 +79,8 @@
     tileRowCount = [image rowsWithTileHeight:tileHeight];
     tileColCount = [image columnsWithTileWidth:tileWidth];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    TileCutterOutputPrefs outputFormat = (TileCutterOutputPrefs)[defaults integerForKey:@"OutputFormat"];
     for (int row = 0; row < tileRowCount; row++)
     {
         // Each row operation gets its own ImageRep to avoid contention
@@ -88,6 +92,7 @@
         op.imageRep = imageRep;
         op.baseFilename = baseFilename;
         op.delegate = self;
+        op.outputFormat = outputFormat;
         [queue addOperation:op];
         [op release];
     }

@@ -5,3 +5,14 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+
+typedef enum
+{
+    TileCutterOutputPrefsJPEG,
+    TileCutterOutputPrefsGIF,
+    TileCutterOutputPrefsTIFF,
+    TileCutterOutputPrefsBMP,
+    TileCutterOutputPrefsPNG,
+    TileCutterOutputPrefsJPEG2000
+} TileCutterOutputPrefs;

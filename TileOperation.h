@@ -23,11 +23,10 @@
 
 }
 @property (assign) NSObject <TileOperationDelegate> *delegate;
-//@property (retain) NSImage *image;
 @property (retain) NSBitmapImageRep *imageRep;
-//@property NSUInteger column;
 @property NSUInteger row;
 @property (retain) NSString *baseFilename;
 @property NSUInteger tileHeight;
 @property NSUInteger tileWidth;
+@property TileCutterOutputPrefs outputFormat;
 @end
