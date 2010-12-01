@@ -92,10 +92,12 @@
 }
 -(NSUInteger)columnsWithTileWidth:(CGFloat)tileWidth
 {
-    return [self size].width / tileWidth + 1;
+    CGFloat columns = [self size].width / tileWidth;
+    return (NSUInteger) ceilf(columns);
 }
 -(NSUInteger)rowsWithTileHeight:(CGFloat)tileHeight
 {
-    return [self size].height / tileHeight + 1;
+    CGFloat rows = [self size].height / tileHeight;
+    return (NSUInteger) ceilf(rows);
 }
 @end
