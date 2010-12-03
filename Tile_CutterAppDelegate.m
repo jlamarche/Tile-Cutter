@@ -170,6 +170,15 @@
     [super dealloc];
 }
 #pragma mark -
+- (void)updateProgress
+{
+    if (progressRow >= tileRowCount)
+        [NSApp endSheet:progressWindow];
+    
+//    [rowBar setDoubleValue:(double)progressRow];
+//    [columnBar setDoubleValue:(double)progressCol];
+    [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", progressRow, progressCol]]; 
+}
 - (void)operationDidFinishTile:(TileOperation *)op
 {
     progressCol++;
@@ -181,11 +190,11 @@
     if (progressRow >= tileRowCount)
         [NSApp endSheet:progressWindow];
     
-    [rowBar setDoubleValue:(double)progressRow];
-    [columnBar setDoubleValue:(double)progressCol];
-    [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", progressRow, progressCol]];
+//    [rowBar setDoubleValue:(double)progressRow];
+//    [columnBar setDoubleValue:(double)progressCol];
+//    [progressLabel setStringValue:[NSString stringWithFormat:@"Processing row %d, column %d", progressRow, progressCol]];
     
-    
+    [self performSelectorOnMainThread:@selector(updateProgress) withObject:nil waitUntilDone:NO];
 }
 - (void)delayAlert:(NSString *)message
 {
