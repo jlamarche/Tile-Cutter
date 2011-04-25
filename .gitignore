@@ -1,5 +1,4 @@
 # XCode noise
-PLBlocks.framework/*
 *.pbxuser
 *.mode1v3
 *.pyc 
