@@ -67,7 +67,8 @@
                 break;
         }
         
-        for (int column = 0; column < [imageRep pixelsWide] / tileWidth + 1; column++)
+		int tileColCount = [imageRep columnsWithTileWidth:tileWidth];
+        for (int column = 0; column < tileColCount; column++)
         {
             NSImage *subImage = [imageRep subImageWithTileWidth:(float)tileWidth tileHeight:(float)tileHeight column:column row:row];
             
