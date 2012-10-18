@@ -1,0 +1,32 @@
+Contents of /Users/jeff/dev/Tile-Cutter/Tile_Cutter_Prefix.pch
+4.1 (tags/Apple/clang-421.11.65) (based on LLVM 3.1svn)
+x86_64-apple-darwin12.2.0
+-x
+objective-c
+-arch
+x86_64
+-fmessage-length=0
+-std=gnu99
+-fpascal-strings
+-O0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+-fasm-blocks
+-mmacosx-version-min=10.6
+-g
+-fvisibility=hidden
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-iquote
+-iquote
+-I/Users/jeff/dev/Tile-Cutter/build/Debug/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/jeff/dev/Tile-Cutter/build/Debug
+-ferror-limit=10
+-working-directory=/Users/jeff/dev/Tile-Cutter
+-Xclang
+-detailed-preprocessing-record
+SDK_PRODUCT_BUILD_VERSION=12C37
